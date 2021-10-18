@@ -17,14 +17,6 @@
   - (https://www.data.go.kr/dataset/3050988/openapi.do)
 - 법정 동 코드 – 행정 표준 코드 관리 시스템
   - (https://www.code.go.kr/stdcode/regCodeL.do)
-- 환경 지도점검 데이터 – 서울 열린 데이터 광장
-  - (https://data.seoul.go.kr/dataList/datasetList.do#)
-- 상권정보 – 공공 데이터 포탈
-  - (https://www.data.go.kr/dataset/15012005/fileData.do)
-- 코로나 선별 진료소 현황- 공공데이터 포탈
-  - https://www.mohw.go.kr/react/popup_200128_3.html
-- 국민 안심 병원 목록- 공공데이터 포탈
-  - https://www.mohw.go.kr/react/popup_200128.html
 
 ## 3. 요구사항
 
@@ -113,8 +105,6 @@ profile.js            // 세션 기반 로그인 사용자 상세정보 요청
 portfolio_details.js  // 동별, 아파트별 실거래가 상세정보 요청
 ```
 
-<img src="res/ERD.png" width="70%">
-
 ## 💡 진행 테이블
 
 | 난이도 |                    구현 기능                    | 점수 | 완성 여부 |
@@ -124,9 +114,9 @@ portfolio_details.js  // 동별, 아파트별 실거래가 상세정보 요청
 |  기본  |       실거래가 검색, 결과(아파트별 처리)        |  20  |    ⭕️    |
 |  기본  |        회원관리(등록, 수정, 조회, 탈퇴)         |  10  |    ⭕️    |
 |  기본  |                 로그인/로그아웃                 |  5   |    ⭕️    |
-|  추가  |          관심지역 동네 업종 정보 조회           |  5   |    ⭕️    |
-|  추가  |           관심지역 대기오염 정보 조회           |  5   |    ⭕️    |
-|  심화  | 공지사항 관리(등록,수정,삭제,목록조회,상세조회) |  15  |    ⭕️    |
+|  추가  |          관심지역 동네 업종 정보 조회           |  5   |    ❌     |
+|  추가  |           관심지역 대기오염 정보 조회           |  5   |    ❌     |
+|  심화  | 공지사항 관리(등록,수정,삭제,목록조회,상세조회) |  15  |    ❌     |
 
 # 💡 기능 구현
 
@@ -152,157 +142,48 @@ portfolio_details.js  // 동별, 아파트별 실거래가 상세정보 요청
 
 - 모든 거래 정보 출력 : 전체 HouseDeal 데이터 출력
 
-### 🔍 관심지역 데이터 관리
-
-- 관심지역 등록 : id, 시/도, 구/군 컬럼 기준의 데이터 생성
-
-- 관심지역 삭제 : id, 지역정보 입력 시 (id, 지역정보)에 해당하는 데이터 삭제
-
-- 회원 아이디 기준으로 검색 : id 입력 시 해당 id에 해당하는 관심지역 데이터를 출력
-
-- 전체 관심지역 출력 : 모든 id에 저장된 관심지역 데이터를 출력
-
 ---
 
 # 💡 동작 화면
 
 ## 🔍 메뉴 화면
 
-![ezgif.com-gif-maker__2_](/uploads/3a3c72a8d18f261e1d27599692c22d96/ezgif.com-gif-maker__2_.gif)
+![menu](/res/Main_menu.gif)
 
 </br>
 
 ## 🔍 회원 정보 데이터 관리
 
+### 로그인
+
+![login](/res/login.gif)
+
+</br>
+
 ### 회원 등록
 
-<img src="res/1_1_user_register.png" width="60%">
+![register](/res/register.gif)
 
 </br>
 
 ### 회원정보 수정
 
-<img src="res/1_2_user_modify.png" width="60%">
+![update](/res/update.gif)
 
 <br>
 
 ### 회원 삭제
 
-<img src="res/1_3_user_delete.png" width="60%">
+![delete](/res/delete.gif)
 
 </br>
-
-### 회원 아이디로 검색
-
-<img src="res/1_4_user_selectId.png" width="60%">
-
-<br>
-
-### 모든 회원정보 출력
-
-<img src="res/1_5_user_selectAll.png" width="60%">
 
 ## 🔍 House Deal 데이터 관리
 
 ### 동 이름으로 검색
 
-![ezgif.com-gif-maker__3_](/uploads/b61975bc4644bae89ed7d124d8590669/ezgif.com-gif-maker__3_.gif)
+![search](/res/search.gif)
 
-### 아파트 이름으로 검색
-
-<img src="res/2_3_apt_selectApt.png" width="60%">
-
-### 모든 거래 정보 출력
-
-<img src="res/2_4_apt_selectAll.png" width="60%">
-
-## 🔍 관심지역 데이터 관리
-
-### 관심지역 등록
-
-<img src="res/3_1_interest_register.png" width="60%">
-
-### 관심지역 삭제
-
-<img src="res/3_2_interest_delete.png" width="60%">
-
-### 회원 아이디 기준으로 검색
-
-<img src="res/3_3_interest_selectId.png" width="60%">
-
-### 전체 관심지역 출력
-
-<img src="res/3_4_interest_selectAll.png" width="60%">
-
-## 🔍 주변 상권정보 데이터 관리
-
-### 상권정보 등록
-
-<img src="res/4_1_sales_register.png" width="60%">
-
-### 상권 이름으로 검색
-
-<img src="res/4_2_sales_selectName.png" width="60%">
-
-### 군/구 기준으로 검색
-
-<img src="res/4_3_sales_selectGu.png" width="60%">
-
-### 전체 상권 정보 출력
-
-<img src="res/4_4_sales_selectAll.png" width="60%">
-
-## 🔍 주변 환경점검 데이터 관리
-
-### 환경정보 등록
-
-<img src="res/5_1_env_register.png" width="60%">
-
-### 지역명 기준으로 검색
-
-<img src="res/5_2_env_selectCity.png" width="60%">
-
-### 전체 환경점검 정보 출력
-
-<img src="res/5_3_env_selectAll.png" width="60%">
-
-## 🔍 코로나 선별진료소 데이터 관리
-
-### 선별진료소 등록
-
-<img src="res/6_1_corona_register.png" width="60%">
-
-### 선별진료소 이름으로 검색
-
-<img src="res/6_2_corona_selectName.png" width="60%">
-
-### 군/구 기준으로 검색
-
-<img src="res/6_3_corona_selectGu.png" width="60%">
-
-### 전체 선별진료소 정보 출력
-
-<img src="res/6_4_corona_selectAll.png" width="60%">
-
-## 🔍 병원정보 데이터 관리
-
-### 병원 등록
-
-<img src="res/7_1_hos_register.png" width="60%">
-
-### 군/구 기준으로 검색
-
-<img src="res/7_2_hos_selectGu.png" width="60%"/>
-
-### 병원 이름으로 검색
-
-<img src="res/7_3_hos_selectName.png" width="60%">
-
-### 모든 병원 정보 출력
-
-<img src="res/7_4_hos_selectAll.png" width="60%">
-
----
 
 ## 👀 느낀점 및 소감
 
@@ -329,4 +210,3 @@ MySQL 사용법, 요구사항 분석 및 DB 모델링, DB 데이터 연동을 �
 
 **[아쉬운점]**
 처음에 요구사항을 적합한 DB를 설계하는 과정이 오래 걸렸고 이를 구현하는 것 또한 마냥 쉽지만은 않았다. 요구사항에 최적화된, 좋은 효율성의 DB를 구축하지 못했다는 점이 아쉽고 이후 이 부분을 좀더 개선하고 싶다.
-# BackEnd_Playground
